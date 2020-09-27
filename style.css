@@ -18,7 +18,7 @@
   /* Font size */
   --font-large: 48px;
   --font-medium: 24px;
-  --font-regular: 18px;
+  --font-regular: 17px;
   --font-small: 16px;
   --font-micro: 14px;
 
@@ -29,6 +29,9 @@
 
   /* Size */
   --size-border-radius: 4px;
+
+  /* Animation */
+  --animation-duration: 0.3s;
 }
 
 /* Universal tags */
@@ -121,6 +124,7 @@ p {
 
 .navbar__menu {
   display: flex;
+  padding: 20px;
 }
 
 .navbar__menu__item {
@@ -152,8 +156,9 @@ p {
 
 .home__title,
 .home__description {
-  margin-top: 0;
   color: var(--color-light-white);
+  width: 50%;
+  margin: 30px auto;
 }
 
 .home__contact {
@@ -169,4 +174,46 @@ p {
 .home__contact:hover {
   background-color: var(--color-light-white);
   color: var(--color-black);
+}
+
+/* Section common */
+.section {
+  padding: 50px;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* About */
+.about__majors {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 0;
+}
+
+.major__icon {
+  width: 170px;
+  height: 170px;
+  line-height: 170px;
+  font-size: 80px;
+  margin: auto;
+  border: 1px solid var(--color-blue);
+  color: var(--color-blue);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.major__icon:hover i {
+  color: var(--color-sky-blue);
+  transform: rotate(-30deg) scale(1.1);
+  transition: all var(--animation-duration) ease;
+}
+
+.major__title,
+.major__description {
+  color: var(--color-dark-grey);
+}
+
+.major__description {
+  font-size: var(--font-small);
 }
