@@ -4,7 +4,7 @@
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
-  --color-blue: #4457ff;
+  --color-blue: #3801ff;
   --color-sky-blue: #4bc5fd;
   --color-dark-sky: #0658d4;
   --color-black: #000000;
@@ -438,4 +438,42 @@ p {
 
 .testimonial__speech-bubble a {
   color: var(--color-sky-blue);
+}
+
+/* Contact */
+#contact {
+  background-image: linear-gradient(
+    to right,
+    #1fd2ff 0%,
+    #77b7ff 51%,
+    #1f66ff 100%
+  );
+  padding: 24px;
+}
+
+.contact__title,
+.contact__email {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin: 32px 0;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+}
+
+.contact__links i {
+  transition: all var(--animation-duration) ease-in;
+}
+
+.contact__links i:hover {
+  transform: scale(1.1);
+  color: var(--color-black);
+}
+
+.contact__rights {
+  font-size: var(--font-micro);
 }
