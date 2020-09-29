@@ -101,16 +101,33 @@ p {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  color: var(--color-white);
+  height: 80px;
+  z-index: 100;
+  background-color: transparent;
+}
+#navbar:before {
   background-image: linear-gradient(
     to right,
     #1fd2ff 0%,
     #77b7ff 51%,
     #1f66ff 100%
   );
-  align-items: center;
-  color: var(--color-white);
-  height: 80px;
-  z-index: 100;
+  content: "";
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity var(--animation-duration) ease-in-out;
+  display: block;
+  height: 100%;
+  z-index: -99;
+}
+
+#navbar.navbar--dark:before {
+  opacity: 1;
 }
 
 .navbar__logo {
