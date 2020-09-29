@@ -18,7 +18,17 @@ navbarMenu.addEventListener('click', (event) => {
     if (link == null) {
         return;
     } else {
-        const elem = document.querySelector(link);
-        elem.scrollIntoView({ behavior: 'smooth' });
+        scrollIntoView(event);
     }
 })
+
+const contactBtn = document.querySelector('.home__contact');
+contactBtn.addEventListener('click', (event) => {
+    scrollIntoView(event);
+})
+
+function scrollIntoView(selector) {
+    const target = selector.target;
+    const link = target.dataset.link;
+    document.querySelector(link).scrollIntoView({ behavior: 'smooth' })
+}
