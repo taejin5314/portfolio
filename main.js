@@ -11,6 +11,7 @@ document.addEventListener('scroll', () => {
     }
 })
 
+// Change to the section which is selected
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
     const target = event.target;
@@ -22,6 +23,7 @@ navbarMenu.addEventListener('click', (event) => {
     }
 })
 
+// Click the contact button in Home section
 const contactBtn = document.querySelector('.home__contact');
 contactBtn.addEventListener('click', (event) => {
     scrollIntoView(event);
@@ -32,3 +34,11 @@ function scrollIntoView(selector) {
     const link = target.dataset.link;
     document.querySelector(link).scrollIntoView({ behavior: 'smooth' })
 }
+
+// Home section fading
+const home = document.querySelector('.home__container')
+const homeSectionHeight = home.getBoundingClientRect().height;
+console.log(homeSectionHeight)
+document.addEventListener('scroll', () => {
+    home.style.opacity = `${1 - window.scrollY / homeSectionHeight}`;
+})
