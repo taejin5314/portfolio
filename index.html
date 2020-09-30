@@ -204,16 +204,17 @@
         <h1>My work</h1>
         <h2>Projects</h2>
         <div class="work__categories">
-          <button class="category__button active">
-            <span>All</span><span class="category__count">4</span>
+          <button class="category__button active" data-filter="*">
+            <span data-filter="*">All</span
+            ><span class="category__count" data-filter="*">4</span>
           </button>
-          <button class="category__button">
+          <button class="category__button" data-filter="front-end">
             <span>Front-end</span><span class="category__count">3</span>
           </button>
-          <button class="category__button">
+          <button class="category__button" data-filter="back-end">
             <span>Back-end</span><span class="category__count">2</span>
           </button>
-          <button class="category__button">
+          <button class="category__button" data-filter="react">
             <span>React</span><span class="category__count">4</span>
           </button>
         </div>
@@ -223,6 +224,7 @@
             href="https://github.com/taejin5314/Amazon-clone"
             class="project"
             target="blank"
+            data-type="*"
           >
             <img
               class="project__img"
@@ -239,6 +241,7 @@
             href="https://github.com/taejin5314/Airbnb-clone"
             class="project"
             target="blank"
+            data-type="front-end, react"
           >
             <img
               class="project__img"
@@ -255,6 +258,7 @@
             href="https://github.com/taejin5314/Netflix-clone2"
             class="project"
             target="blank"
+            data-type="front-end, react"
           >
             <img
               class="project__img"
@@ -271,6 +275,7 @@
             href="https://github.com/taejin5314/WhatsApp-clone"
             class="project"
             target="blank"
+            data-type="react, back-end"
           >
             <img
               class="project__img"
