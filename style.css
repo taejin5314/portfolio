@@ -179,8 +179,8 @@ p {
 }
 
 .home__avatar {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
 }
 
 .home__title,
@@ -414,7 +414,7 @@ p {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -546,15 +546,41 @@ p {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(
+      to right,
+      #1fd2ff 0%,
+      #77b7ff 51%,
+      #1f66ff 100%
+    );
   }
   .navbar__logo {
-    height: 100%;
+    margin-top: 20px;
   }
   .navbar__menu {
     flex-direction: column;
     text-align: center;
     width: 100%;
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50px);
+    transition: all var(--animation-duration) ease-in;
+    background-image: linear-gradient(
+      to right,
+      #1fd2ff 0%,
+      #77b7ff 51%,
+      #1f66ff 100%
+    );
+  }
+  .navbar__menu.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  #home {
+    padding: 80px 0 0 0;
   }
 
   /* About */

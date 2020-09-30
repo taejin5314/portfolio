@@ -9,6 +9,11 @@ document.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('navbar--dark')
     }
+
+    console.log(document.querySelector('.navbar__menu').classList)
+    if (document.querySelector('.navbar__menu').classList.length === 2) {
+        document.querySelector('.navbar__menu').classList.remove('active')
+    }
 })
 
 // Change to the section which is selected
@@ -22,6 +27,13 @@ navbarMenu.addEventListener('click', (event) => {
         scrollIntoView(event);
     }
 })
+
+// navbar toggle button
+const toggleBtn = document.querySelector('.navbar__toggle-btn');
+toggleBtn.addEventListener('click', (e) => {
+    navbarMenu.classList.toggle('active')
+})
+
 
 // Click the contact button in Home section
 const contactBtn = document.querySelector('.home__contact');
@@ -81,9 +93,6 @@ workBtnContainer.addEventListener('click', (e) => {
         projectContainer.classList.remove('anim-out');
     }, 300);
 })
-
-
-
 
 function scrollIntoView(selector) {
     const target = selector.target;
