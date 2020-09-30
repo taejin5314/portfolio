@@ -10,7 +10,6 @@ document.addEventListener('scroll', () => {
         navbar.classList.remove('navbar--dark')
     }
 
-    console.log(document.querySelector('.navbar__menu').classList)
     if (document.querySelector('.navbar__menu').classList.length === 2) {
         document.querySelector('.navbar__menu').classList.remove('active')
     }
@@ -44,7 +43,6 @@ contactBtn.addEventListener('click', (event) => {
 // Home section fading
 const home = document.querySelector('.home__container')
 const homeSectionHeight = home.getBoundingClientRect().height;
-console.log(homeSectionHeight)
 document.addEventListener('scroll', () => {
     home.style.opacity = `${1 - window.scrollY / homeSectionHeight}`;
 })
@@ -83,7 +81,6 @@ workBtnContainer.addEventListener('click', (e) => {
     projectContainer.classList.add('anim-out');
     setTimeout(() => {
         projects.forEach((project) => {
-            // console.log(project.dataset.type);
             if (filter === '*' || project.dataset.type === '*' || project.dataset.type.includes(filter)) {
                 project.classList.remove('invisible')
             } else {
