@@ -29,12 +29,6 @@ contactBtn.addEventListener('click', (event) => {
     scrollIntoView(event);
 })
 
-function scrollIntoView(selector) {
-    const target = selector.target;
-    const link = target.dataset.link;
-    document.querySelector(link).scrollIntoView({ behavior: 'smooth' })
-}
-
 // Home section fading
 const home = document.querySelector('.home__container')
 const homeSectionHeight = home.getBoundingClientRect().height;
@@ -42,3 +36,24 @@ console.log(homeSectionHeight)
 document.addEventListener('scroll', () => {
     home.style.opacity = `${1 - window.scrollY / homeSectionHeight}`;
 })
+
+// Show "arrow up" button when scrolling down
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+    if (window.scrollY > homeSectionHeight / 2) {
+        arrowUp.classList.add('visible')
+    } else {
+        arrowUp.classList.remove('visible')
+    }
+})
+
+// Click "arrow up" button
+arrowUp.addEventListener('click', (event) => {
+    scrollIntoView(event);
+})
+
+function scrollIntoView(selector) {
+    const target = selector.target;
+    const link = target.dataset.link;
+    document.querySelector(link).scrollIntoView({ behavior: 'smooth' })
+}
